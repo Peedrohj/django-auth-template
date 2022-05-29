@@ -1,0 +1,20 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [
+    {name = "Pedro Farias", email = ""},
+]
+dependencies = [
+    "django>=4.0.4",
+    "django-rest-framework>=0.1.0",
+    "pylint>=2.13.9",
+]
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.pdm]
+
+[build-system]
+requires = ["pdm-pep517>=0.12.0"]
+build-backend = "pdm.pep517.api"
