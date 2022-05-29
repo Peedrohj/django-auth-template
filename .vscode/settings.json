@@ -1,7 +1,8 @@
 {
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
-    "python.linting.pylintPath": "pylint",
+    "python.linting.pylintPath": "${workspaceFolder}/code/__pypackages__/3.10/bin/pylint",
+    "python.formatting.autopep8Path": "${workspaceFolder}/code/__pypackages__/3.10/bin/autopep8",
     "python.linting.pylintArgs": [
         "--disable=C0111"
     ],
