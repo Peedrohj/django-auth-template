@@ -25,15 +25,15 @@ RUN mkdir -p /vol/web/static  \
 RUN useradd -ms /bin/bash -u 1002 python
 WORKDIR /home/python/app
 USER python
-RUN pip install pdm
+RUN pip install -U pdm
 
 # Define environment variables
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONFAULTHANDLER 1
-ENV MY_PYTHON_PACKAGES=/home/python/app/__pypackages__/3.10
+ENV MY_PYTHON_PACKAGES="/home/python/app/code/__pypackages__/3.10"
 ENV PYTHONPATH="${PYTHONPATH}:/home/python/app:/home/python/.local/bin"
-ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 ENV PATH="$PATH:${MY_PYTHON_PACKAGES}/bin:/home/python/.local/bin"
+ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 
 CMD [ "tail", "-f", "/dev/null" ]
