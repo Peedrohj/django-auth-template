@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     default-jre \
     git \
     curl \
-    wget 
+    wget \
+    openssh-client
 
 # Install GCC, Make, libpq-dev (for psicopg) and procps
 RUN apt-get install -y gcc libpq-dev make graphviz procps gettext-base
