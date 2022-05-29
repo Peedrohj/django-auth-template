@@ -3,6 +3,8 @@
     "python.linting.enabled": true,
     "python.linting.pylintPath": "${workspaceFolder}/code/__pypackages__/3.10/bin/pylint",
     "python.formatting.autopep8Path": "${workspaceFolder}/code/__pypackages__/3.10/bin/autopep8",
+    "python.formatting.autopep8Args": ["--in-place"],
+
     "python.linting.pylintArgs": [
         "--disable=C0111"
     ],
