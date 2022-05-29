@@ -3,7 +3,7 @@ import json
 import uuid
 from abc import ABC
 from dataclasses import dataclass, field, fields
-from core.domain.exceptions import InvalidUuidException
+from core.domain.exceptions import InvalidUUidException
 
 @dataclass(frozen=True, slots=True)
 class ValueObject(ABC):
@@ -31,4 +31,4 @@ class UniqueEntityId(ValueObject):
         try:
             uuid.UUID(self.id)
         except ValueError as ex:
-            raise InvalidUuidException() from ex
+            raise InvalidUUidException() from ex
