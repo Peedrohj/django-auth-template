@@ -23,8 +23,16 @@ dev = [
 ]
 
 [tool.pdm.scripts]
+makemigrations = "code/manage.py makemigrations"
+mergemigrations = "code/manage.py makemigrations --merge"
+migrate = "code/manage.py migrate"
+loaddata = "code/manage.py loaddata code/fixtures/setup-dump.json"
+dumpdata = "code/manage.py dumpdata --natural-foreign --natural-primary -e sessions -e admin.logentry -e core.logactionmodel --indent 4 > core/fixtures/setup-dump.json"
+collectstatic = "code/manage.py collectstatic"
+
 pep8 = "autopep8 --in-place --recursive ."
 pylint = "pylint ."
+
 test = "pytest --ignore __pypackages__"
 test_cov = "pdm run test --cov . --cov-fail-under 80"
 test_cov_html = "pdm run test_cov --cov-report html:./__coverage"

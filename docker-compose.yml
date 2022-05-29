@@ -9,10 +9,10 @@ services:
       #   - path-to-image-in-container-registry:latest
     container_name: django-auth-template
     image: django-auth-template
-    command: code/.docker/entrypoint.sh
+    command: ./.docker/entrypoint.sh
     volumes:
       - static-data:/vol/web
-      - ../:/home/python/app
+      - .:/home/python/app
     ports:
       - 8000:8000
     depends_on:
