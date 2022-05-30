@@ -4,8 +4,20 @@ from dataclasses import FrozenInstanceError, is_dataclass
 from datetime import datetime
 
 # Entities
-from core.domain.entity import Entity
+from core.domain.entity import Entity, BaseEntityId
 
+class TestBaseEntityID(unittest.TestCase):
+    def test_if_is_a_dataclass(self):
+        self.assertTrue(is_dataclass(BaseEntityId))
+
+    def test_if_id_is_being_generated(self):
+        entity = Entity()
+        self.assertIsNotNone(entity.id)
+
+    def test_if_is_immutable(self):
+        with self.assertRaises(FrozenInstanceError):
+            value_object = Entity()
+            value_object.id = "Teste"
 
 class TestBaseEntity(unittest.TestCase):
     def test_if_is_a_dataclass(self):
@@ -19,7 +31,7 @@ class TestBaseEntity(unittest.TestCase):
     def test_if_is_immutable(self):
         with self.assertRaises(FrozenInstanceError):
             value_object = Entity()
-            value_object.id = "Teste"
+            value_object.created_at = "Teste"
 
 
 
