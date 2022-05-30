@@ -1,7 +1,7 @@
 # Utils
 from dataclasses import dataclass, field
 from typing import List
-from core.domain.exceptions import InvalidPermissionsException
+from core.domain.exceptions import InvalidPermissionException
 
 # Entities
 from core.domain.entity import BaseEntityId
@@ -18,4 +18,4 @@ class PermissionGroup(BaseEntityId):
     def __validate(self):
         for permission in self.permissions:
             if not isinstance(permission, Permission):
-                raise InvalidPermissionsException()
+                raise InvalidPermissionException()

@@ -7,6 +7,6 @@ class InvalidContentTypeException(Exception):
         super().__init__(error)
 
 
-class InvalidPermissionsException(Exception):
+class InvalidPermissionException(Exception):
     def __init__(self, error='Value must be a valid Permission instance') -> None:  
         super().__init__(error)
