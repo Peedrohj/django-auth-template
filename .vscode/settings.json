@@ -2,26 +2,20 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "python.linting.pylintArgs": [
-        "code",
         "--disable=C0111"
     ],
-    "python.linting.pylintPath": "${workspaceFolder}/__pypackages__/3.10/bin/pylint",
-    "python.formatting.autopep8Path": "${workspaceFolder}/__pypackages__/3.10/bin/autopep8",
-    "python.formatting.autopep8Args": [
-        "-i",
-        "-a",
-        "-a"
-    ],
-    "python.testing.pytestPath": "${workspaceFolder}/__pypackages__/3.10/bin/pytest",
     "python.autoComplete.extraPaths": [
-        "${workspaceFolder}/code/__pypackages__/3.10/lib"
+        "${workspaceFolder}/__pypackages__/3.10/lib"
     ],
     "python.analysis.extraPaths": [
-        "${workspaceFolder}/code/__pypackages__/3.10/lib"
+        "${workspaceFolder}/__pypackages__/3.10/lib"
     ],
     "python.testing.pytestArgs": [
         "code"
     ],
+    "python.linting.pylintPath": "${workspaceFolder}/__pypackages__/3.10/bin/pylint",
+    "python.formatting.autopep8Path": "${workspaceFolder}/__pypackages__/3.10/bin/autopep8",
     "python.testing.unittestEnabled": false,
     "python.testing.pytestEnabled": true,
+    "python.testing.pytestPath": "${workspaceFolder}/__pypackages__/3.10/bin/pytest",
 }

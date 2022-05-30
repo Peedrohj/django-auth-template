@@ -7,8 +7,7 @@ authors = [
 ]
 dependencies = [
     "django>=4.0.4",
-    "django-rest-framework>=0.1.0",
-    "pytest-cov>=3.0.0"
+    "django-rest-framework>=0.1.0"
 ]
 requires-python = ">=3.10"
 license = {text = "MIT"}
@@ -19,7 +18,8 @@ license = {text = "MIT"}
 dev = [
     "autopep8>=1.6.0",
     "pylint>=2.13.0",
-    "pytest>=7.1.1",
+    "pytest-cov>=3.0.0",
+    "pytest>=7.1.2",
 ]
 
 [tool.pdm.scripts]
@@ -29,6 +29,7 @@ migrate = "code/manage.py migrate"
 loaddata = "code/manage.py loaddata code/fixtures/setup-dump.json"
 dumpdata = "code/manage.py dumpdata --natural-foreign --natural-primary -e sessions -e admin.logentry -e core.logactionmodel --indent 4 > core/fixtures/setup-dump.json"
 collectstatic = "code/manage.py collectstatic"
+djangoshell = "code/manage.py shell"
 
 pep8 = "autopep8 --in-place --recursive ."
 pylint = "pylint ."
