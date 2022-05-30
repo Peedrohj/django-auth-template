@@ -1,7 +1,7 @@
 # Utils
-from abc import ABC
 import unittest
 import uuid
+from abc import ABC
 from dataclasses import FrozenInstanceError, is_dataclass
 from unittest.mock import patch
 
@@ -49,6 +49,3 @@ class TestUniqueEntityId(unittest.TestCase):
             value_object = UniqueEntityId()
             value_object.id = "Fake Id"
 
-    def test_convertion_to_str(self):
-        value_object = UniqueEntityId()
-        self.assertEqual(value_object.id, str(value_object))
