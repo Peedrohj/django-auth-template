@@ -2,7 +2,8 @@
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true,
     "python.linting.pylintArgs": [
-        "--disable=C0111"
+        "--disable=C0111",
+        "--disable=E1123"
     ],
     "python.autoComplete.extraPaths": [
         "${workspaceFolder}/__pypackages__/3.10/lib"
