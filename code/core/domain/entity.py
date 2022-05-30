@@ -21,6 +21,7 @@ class BaseEntityId(ABC):
         object.__setattr__(self, name, value)
         return self
 
+
 @dataclass(frozen=True, slots=True)
 class Entity(BaseEntityId, ABC):
     created_at: Optional[datetime] = field(

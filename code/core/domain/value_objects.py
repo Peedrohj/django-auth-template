@@ -5,6 +5,7 @@ from abc import ABC
 from dataclasses import dataclass, field, fields
 from core.domain.exceptions import InvalidUUidException
 
+
 @dataclass(frozen=True, slots=True)
 class ValueObject(ABC):
 
@@ -18,7 +19,7 @@ class ValueObject(ABC):
 @dataclass(frozen=True, slots=True)
 class UniqueEntityId(ValueObject):
 
-    id: str = field(  
+    id: str = field(
         default_factory=lambda: str(uuid.uuid4())
     )
 

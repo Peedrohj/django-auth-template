@@ -7,6 +7,7 @@ from core.domain.exceptions import InvalidPermissionException
 from core.domain.entity import BaseEntityId
 from core.domain.permission import Permission
 
+
 @dataclass(kw_only=True, frozen=True, slots=True)
 class PermissionGroup(BaseEntityId):
     name: str

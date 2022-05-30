@@ -48,4 +48,3 @@ class TestUniqueEntityId(unittest.TestCase):
         with self.assertRaises(FrozenInstanceError):
             value_object = UniqueEntityId()
             value_object.id = "Fake Id"
-
