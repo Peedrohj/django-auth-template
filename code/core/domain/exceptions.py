@@ -5,3 +5,8 @@ class InvalidUUidException(Exception):
 class InvalidContentTypeException(Exception):
     def __init__(self, error='Value must be a valid Content Type instance') -> None:  
         super().__init__(error)
+
+
+class InvalidPermissionsException(Exception):
+    def __init__(self, error='Value must be a valid Permission instance') -> None:  
+        super().__init__(error)
