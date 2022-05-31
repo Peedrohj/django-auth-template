@@ -5,7 +5,8 @@ from dataclasses import FrozenInstanceError, is_dataclass
 # Entities
 from core.domain.content_type import ContentType
 from core.domain.exceptions import InvalidPermissionException
-from core.domain.permission_group import Permission, PermissionGroup
+from core.domain.permission import Permission
+from core.domain.permission_group import PermissionGroup
 
 
 class TestPermissionGroup(unittest.TestCase):
