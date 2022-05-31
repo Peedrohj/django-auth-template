@@ -2,7 +2,7 @@
 
 ## Features
 
-- [x] Using pdm as project manager
+- [x] Use pdm as project manager
 - [x] Configure sonar lint
 - [x] Create docker environment for development
 - [x] Configure Makefiles
