@@ -44,25 +44,25 @@ class User(Entity):
     def add_permission(self, permission: Permission):
         if not isinstance(permission, Permission):
             raise InvalidPermissionException()
-
         permission_list = self.permissions
-        self._set('permissions', permission_list.append(permission))
+        permission_list.append(permission)
+        self._set('permissions', permission_list)
 
     def add_permission_group(self, group: PermissionGroup):
         if not isinstance(group, PermissionGroup):
             raise InvalidGroupException()
-
         permissions_groups_list = self.permissions_groups
-        self._set('permissions_groups', permissions_groups_list.append(group))
+        permissions_groups_list.append(group)
+        self._set('permissions_groups', permissions_groups_list)
 
     def remove_permission(self, permission_id: str):
-        permission_list = filter(
-            lambda permission: permission.id != permission_id, self.permissions)
+        permission_list = list(filter(
+            lambda permission: permission.id != permission_id, self.permissions))
         self._set('permissions', permission_list)
 
     def remove_permission_group(self, group_id: str):
-        permissions_groups_list = filter(
-            lambda group: group.id != group_id, self.permissions_groups)
+        permissions_groups_list = list(filter(
+            lambda group: group.id != group_id, self.permissions_groups))
         self._set('permissions_groups', permissions_groups_list)
 
     def __validate(self):

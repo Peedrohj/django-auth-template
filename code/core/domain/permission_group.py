@@ -1,17 +1,22 @@
 # Utils
+from __future__ import annotations
+
 from dataclasses import dataclass, field
-from typing import List
-from core.domain.exceptions import InvalidPermissionException
+from typing import TYPE_CHECKING, List
 
 # Entities
 from core.domain.entity import BaseEntityId
+from core.domain.exceptions import InvalidPermissionException
 from core.domain.permission import Permission
 
+if TYPE_CHECKING:
+    from core.domain.user import User
 
 @dataclass(kw_only=True, frozen=True, slots=True)
 class PermissionGroup(BaseEntityId):
     name: str
-    permissions: List[Permission] = field(default_factory=list())
+    permissions: List[Permission] = field(default_factory=list)
+    users: List[User] = field(default_factory=list)
 
     def __post_init__(self):
         self.__validate()
