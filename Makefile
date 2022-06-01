@@ -4,15 +4,15 @@ build:
 
 # Run development containers
 run-dev:
-	docker-compose -f docker-compose.yml up db django-auth-template
+	docker-compose -f docker-compose.yml up db-auth-template django-auth-template
 
 # Run all containers in detached mode
 run-dev-d:
-	docker-compose -f docker-compose.yml up -d db django-auth-template
+	docker-compose -f docker-compose.yml up -d db-auth-template django-auth-template
 
 # Run database in detached mode
 run-db:
-	docker-compose -f docker-compose.yml up -d db
+	docker-compose -f docker-compose.yml up -d db-auth-template
 
 # Stop all containers
 stop-all:
@@ -48,11 +48,11 @@ run-tests:
 
 # Removes all containers
 remove-all:
-	docker rm db django-auth-template-django
+	docker rm db-auth-template django-auth-template-django
 
-# Removes DB and db's data
+# Removes db-auth-template and db-auth-template's data
 remove-db:
-	docker rm db && docker volume rm code_db_data
+	docker rm db-auth-template && docker volume rm code_db_data
 
 # Generate django static files
 collectstatic:

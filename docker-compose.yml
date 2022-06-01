@@ -16,9 +16,9 @@ services:
     ports:
       - 8000:8000
     depends_on:
-      - db
+      - db-auth-template
 
-  db:
+  db-auth-template:
     image: postgres:11-alpine
     container_name: db-auth-template
     restart: always
