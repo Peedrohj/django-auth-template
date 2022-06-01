@@ -4,11 +4,11 @@ from datetime import datetime
 from typing import List
 
 # Entities
-from core.domain.entity import Entity
+from core.domain.entity.base import Entity
+from core.domain.entity.permission import Permission
+from core.domain.entity.permission_group import PermissionGroup
 from core.domain.exceptions import (InvalidGroupException,
                                     InvalidPermissionException)
-from core.domain.permission import Permission
-from core.domain.permission_group import PermissionGroup
 
 
 @dataclass(kw_only=True, frozen=True, slots=True)
