@@ -4,11 +4,12 @@ from dataclasses import FrozenInstanceError, is_dataclass
 from datetime import datetime
 
 # Entities
-from core.domain.user import User
-from core.domain.content_type import ContentType
-from core.domain.exceptions import InvalidPermissionException, InvalidGroupException
-from core.domain.permission import Permission
-from core.domain.permission_group import PermissionGroup
+from core.domain.entity.content_type import ContentType
+from core.domain.entity.permission import Permission
+from core.domain.entity.permission_group import PermissionGroup
+from core.domain.entity.user import User
+from core.domain.exceptions import (InvalidGroupException,
+                                    InvalidPermissionException)
 
 
 class TestPermissionGroup(unittest.TestCase):
@@ -106,7 +107,8 @@ class TestPermissionGroup(unittest.TestCase):
         user.add_permission_group(group=permissions_goup)
 
         self.assertEqual(len(user.permissions_groups), 2)
-        self.assertEqual([self.permissions_groups, permissions_goup], user.permissions_groups)
+        self.assertEqual(
+            [self.permissions_groups, permissions_goup], user.permissions_groups)
 
     def test_remove_permissions_groups(self):
         user = User(**self.user_props)
