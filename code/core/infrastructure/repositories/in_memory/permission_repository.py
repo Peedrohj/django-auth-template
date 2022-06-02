@@ -24,8 +24,12 @@ class InMemoryPermissionRepository(PermissionRepository, InMemoryBaseEntityRepos
     def update(self, permission_id: str | UniqueEntityId, permission: Permission) -> Permission:
         old_permission: Permission = self._get(str(permission_id))
         index = self.db.index(old_permission)
+        new_permission_data = {
+            **permission.to_dict(),
+            "id": permission_id,
+            "content_type": permission.content_type
+        }
 
-        new_permission_data = {**permission.to_dict(), "id": permission_id, "content_type": permission.content_type}
         new_permission = Permission(**new_permission_data)
         self.db[index] = new_permission
         return new_permission
