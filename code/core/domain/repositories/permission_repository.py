@@ -21,7 +21,7 @@ class PermissionRepository(ABC):
         raise NotImplementedError()
 
     @abstractmethod
-    def update(self, permission: Permission) -> Permission:
+    def update(self, permission_id: str | UniqueEntityId, permission: Permission) -> Permission:
         raise NotImplementedError()
 
     @abstractmethod

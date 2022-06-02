@@ -21,11 +21,14 @@ class InMemoryPermissionRepository(PermissionRepository, InMemoryBaseEntityRepos
     def find_all(self, filters: Dict = None) -> List[Permission]:
         return self.db
 
-    def update(self, permission: Permission) -> Permission:
-        old_permission = self._get(str(permission.id))
+    def update(self, permission_id: str | UniqueEntityId, permission: Permission) -> Permission:
+        old_permission: Permission = self._get(str(permission_id))
         index = self.db.index(old_permission)
-        self.db[index] = permission
-        return permission
+
+        new_permission_data = {**permission.to_dict(), "id": permission_id, "content_type": permission.content_type}
+        new_permission = Permission(**new_permission_data)
+        self.db[index] = new_permission
+        return new_permission
 
     def delete(self, permission_id: str | UniqueEntityId) -> None:
         old_permission = self._get(str(permission_id))
