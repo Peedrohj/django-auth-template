@@ -27,7 +27,7 @@ class InMemoryPermissionGoupRepository(PermissionGoupRepository, InMemoryBaseEnt
         new_group_data = {
             **group.to_dict(),
             "id": group_id,
-            "content_type": group.content_type
+            "permissions": group.permissions
         }
 
         new_group = PermissionGroup(**new_group_data)
