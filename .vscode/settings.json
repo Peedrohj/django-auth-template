@@ -12,7 +12,9 @@
         "${workspaceFolder}/__pypackages__/3.10/lib"
     ],
     "python.testing.pytestArgs": [
-        "code"
+        "code",
+        "-n",
+        "8"
     ],
     "python.linting.pylintPath": "${workspaceFolder}/__pypackages__/3.10/bin/pylint",
     "python.formatting.autopep8Path": "${workspaceFolder}/__pypackages__/3.10/bin/autopep8",
