@@ -44,7 +44,7 @@ dumpdata:
 
 # Run django tests
 run-tests:
-	docker-compose -f docker-compose.yml exec django-auth-template clear && date && make -f /home/python/app/Makefile test $(test) && date
+	clear && date && docker-compose -f docker-compose.yml exec django-auth-template pdm run test $(test) && date
 
 # Removes all containers
 remove-all:

@@ -2,11 +2,11 @@
 import unittest
 
 # Entities
-from core.domain.entity.content_type import ContentType
-from core.domain.entity.permission import Permission
+from core.domain.entity import ContentType, Permission
 
 # Repositories
-from core.infrastructure.repositories.in_memory.permission_repository import InMemoryPermissionRepository
+from core.infrastructure.repositories.in_memory.permission_repository import \
+    InMemoryPermissionRepository
 
 
 class TestPermissionRepository(unittest.TestCase):

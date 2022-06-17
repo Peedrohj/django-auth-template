@@ -2,8 +2,7 @@
 from dataclasses import dataclass
 
 # Entities
-from core.domain.entity.base import BaseEntityId
-from core.domain.entity.content_type import ContentType
+from core.domain.entity import BaseEntityId, ContentType
 from core.domain.exceptions import InvalidContentTypeException
 
 

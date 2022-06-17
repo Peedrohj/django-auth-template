@@ -4,12 +4,7 @@ from dataclasses import FrozenInstanceError, is_dataclass
 from datetime import datetime
 
 # Entities
-from core.domain.entity.content_type import ContentType
-from core.domain.entity.permission import Permission
-from core.domain.entity.permission_group import PermissionGroup
-from core.domain.entity.user import User
-from core.domain.exceptions import (InvalidGroupException,
-                                    InvalidPermissionException)
+from core.domain.entity import ContentType, Permission, PermissionGroup, User
 
 
 class TestPermissionGroup(unittest.TestCase):

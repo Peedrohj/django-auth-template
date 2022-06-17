@@ -3,7 +3,7 @@ from abc import ABC
 from typing import List, TypeVar
 
 # Entities
-from core.domain.entity.base import BaseEntityId, Entity as DomainEntity
+from core.domain.entity import BaseEntityId, Entity as DomainEntity
 from core.domain.value_objects import UniqueEntityId
 
 # Repositories

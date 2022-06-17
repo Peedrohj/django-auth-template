@@ -4,7 +4,7 @@ from dataclasses import FrozenInstanceError, is_dataclass
 from datetime import datetime
 
 # Entities
-from core.domain.entity.base import BaseEntityId, Entity
+from core.domain.entity import BaseEntityId, Entity
 
 
 class TestBaseEntityID(unittest.TestCase):
