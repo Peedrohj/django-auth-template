@@ -3,7 +3,7 @@ import unittest
 from dataclasses import FrozenInstanceError, is_dataclass
 
 # Entities
-from core.domain.entity import ContentType, Permission, PermissionGroup
+from core.domain.entities import ContentType, Permission, PermissionGroup
 from core.domain.exceptions import InvalidPermissionException
 
 

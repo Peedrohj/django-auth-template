@@ -4,7 +4,7 @@ from typing import List, Dict
 
 # Entities
 from core.domain.value_objects import UniqueEntityId
-from core.domain.entity.permission import Permission
+from core.domain.entities.permission import Permission
 
 # Repositories
 from core.domain.repositories.permission_repository import PermissionRepository

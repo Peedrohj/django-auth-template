@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 from typing import Dict, List
 
 # Entities
-from core.domain.entity.permission_group import PermissionGroup
+from core.domain.entities.permission_group import PermissionGroup
 from core.domain.value_objects import UniqueEntityId
 
 

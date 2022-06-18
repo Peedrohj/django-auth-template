@@ -4,7 +4,7 @@ from datetime import datetime
 from typing import List
 
 # Entities
-from core.domain.entity import Entity, Permission, PermissionGroup
+from core.domain.entities import Entity, Permission, PermissionGroup
 from core.domain.exceptions import (InvalidGroupException,
                                     InvalidPermissionException)
 

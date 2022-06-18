@@ -5,11 +5,11 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, List
 
 # Entities
-from core.domain.entity import BaseEntityId, Permission
+from core.domain.entities import BaseEntityId, Permission
 from core.domain.exceptions import InvalidPermissionException
 
 if TYPE_CHECKING:
-    from core.domain.entity import User
+    from core.domain.entities import User
 
 
 @dataclass(kw_only=True, frozen=True, slots=True)

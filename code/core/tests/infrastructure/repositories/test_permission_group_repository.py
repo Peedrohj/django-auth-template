@@ -2,7 +2,7 @@
 import unittest
 
 # Entities
-from core.domain.entity import ContentType, Permission, PermissionGroup
+from core.domain.entities import ContentType, Permission, PermissionGroup
 
 # Repositories
 from core.infrastructure.repositories.in_memory.permission_group_repository import \

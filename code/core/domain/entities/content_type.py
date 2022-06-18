@@ -2,7 +2,7 @@
 from dataclasses import dataclass
 
 # Entities
-from core.domain.entity import BaseEntityId
+from core.domain.entities import BaseEntityId
 
 
 @dataclass(kw_only=True, frozen=True, slots=True)

@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import List
 
 # Entites
-from core.domain.entity import Permission
+from core.domain.entities import Permission
 
 # Repositories
 from core.domain.repositories.permission_repository import PermissionRepository
