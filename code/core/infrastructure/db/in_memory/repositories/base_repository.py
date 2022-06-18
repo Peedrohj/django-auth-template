@@ -21,13 +21,3 @@ class InMemoryBaseEntityRepository(ABC):
         if not entity:
             raise NotFoundException(f"Entity not found using ID '{entity_id}'")
         return entity
-
-
-class InMemoryEntityRepository(ABC):
-    db: List[Entity] = []
-
-    def _get(self, entity_id: str | UniqueEntityId) -> Entity:
-        entity = next(filter(lambda i: i.id == entity_id, self.db), None)
-        if not entity:
-            raise NotFoundException(f"Entity not found using ID '{entity_id}'")
-        return entity

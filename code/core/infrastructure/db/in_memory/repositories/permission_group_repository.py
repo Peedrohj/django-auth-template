@@ -8,7 +8,7 @@ from core.domain.entities.permission_group import PermissionGroup
 
 # Repositories
 from core.domain.repositories.permission_group_repository import PermissionGoupRepository
-from core.infrastructure.repositories.in_memory.base_repository import InMemoryBaseEntityRepository
+from core.infrastructure.db.in_memory.repositories.base_repository import InMemoryBaseEntityRepository
 
 @dataclass(slots=True)
 class InMemoryPermissionGoupRepository(PermissionGoupRepository, InMemoryBaseEntityRepository):

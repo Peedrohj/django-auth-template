@@ -5,12 +5,12 @@ import unittest
 from core.domain.entities import ContentType, Permission, PermissionGroup
 
 # Repositories
-from core.infrastructure.repositories.in_memory.permission_group_repository import \
+from core.infrastructure.db.in_memory.repositories import \
     InMemoryPermissionGoupRepository
 
 
 class TestPermissionRepository(unittest.TestCase):
-    permission_group_repo: InMemoryPermissionGoupRepository 
+    permission_group_repo: InMemoryPermissionGoupRepository
 
     def setUp(self) -> None:
         self.permission_group_repo = InMemoryPermissionGoupRepository()
