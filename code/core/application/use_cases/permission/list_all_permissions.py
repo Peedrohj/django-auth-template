@@ -1,17 +1,21 @@
 # Utils
 from dataclasses import dataclass
-from typing import List
+from typing import Dict, List
 
 # Entites
 from core.domain.entities import Permission
+from core.domain.value_objects import UniqueEntityId
 
 # Repositories
-from core.domain.repositories.permission_repository import PermissionRepository
+from core.domain.repositories import PermissionRepository
 
 
 @dataclass(slots=True)
 class ListAllPermissions:
     permission_repository: PermissionRepository
 
-    def execute(self) -> List[Permission]:
-        return self.permission_repository.find_all()
+    def execute(self, permission_id: str | UniqueEntityId = None, filters: Dict = None) -> List[Permission]:
+        if permission_id is not None:
+            return self.permission_repository.find_by_id(permission_id=permission_id)
+
+        return self.permission_repository.find_all(filters=filters)
