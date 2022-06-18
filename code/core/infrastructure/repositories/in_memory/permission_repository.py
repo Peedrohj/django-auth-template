@@ -1,4 +1,5 @@
 # Utils
+from dataclasses import dataclass
 from typing import List, Dict
 
 # Entities
@@ -9,7 +10,7 @@ from core.domain.entity.permission import Permission
 from core.domain.repositories.permission_repository import PermissionRepository
 from core.infrastructure.repositories.in_memory.base_repository import InMemoryBaseEntityRepository
 
-
+@dataclass(slots=True)
 class InMemoryPermissionRepository(PermissionRepository, InMemoryBaseEntityRepository):
     def insert(self, permission: Permission) -> Permission:
         self.db.append(permission)
