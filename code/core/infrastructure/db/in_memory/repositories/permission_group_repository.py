@@ -7,11 +7,11 @@ from core.domain.value_objects import UniqueEntityId
 from core.domain.entities.permission_group import PermissionGroup
 
 # Repositories
-from core.domain.repositories.permission_group_repository import PermissionGoupRepository
+from core.domain.repositories.permission_group_repository import PermissionGroupRepository
 from core.infrastructure.db.in_memory.repositories.base_repository import InMemoryBaseEntityRepository
 
 @dataclass(slots=True)
-class InMemoryPermissionGoupRepository(PermissionGoupRepository, InMemoryBaseEntityRepository):
+class InMemoryPermissionGoupRepository(PermissionGroupRepository, InMemoryBaseEntityRepository):
     def insert(self, group: PermissionGroup) -> PermissionGroup:
         self.db.append(group)
         return group
