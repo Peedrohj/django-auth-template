@@ -14,11 +14,11 @@ class TestPermissionRepository(unittest.TestCase):
 
     def setUp(self) -> None:
         self.permission_group_repo = InMemoryPermissionGoupRepository()
-        self.group = Permission(name="Test", codename="Test", content_type=ContentType(
+        self.permission = Permission(name="Test", codename="Test", content_type=ContentType(
             app_label="Test", model="Test"))
         self.group_props = {
             "name": "test",
-            "permissions": [self.group]
+            "permissions": [self.permission]
         }
         self.group = PermissionGroup(**self.group_props)
 
