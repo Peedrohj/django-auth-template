@@ -16,7 +16,6 @@ if TYPE_CHECKING:
 class PermissionGroup(BaseEntityId):
     name: str
     permissions: List[Permission] = field(default_factory=list)
-    users: List[User] = field(default_factory=list)
 
     def __post_init__(self):
         self.__validate()
