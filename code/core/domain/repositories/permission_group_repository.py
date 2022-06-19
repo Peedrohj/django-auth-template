@@ -7,7 +7,7 @@ from core.domain.entities.permission_group import PermissionGroup
 from core.domain.value_objects import UniqueEntityId
 
 
-class PermissionGoupRepository(ABC):
+class PermissionGroupRepository(ABC):
     @abstractmethod
     def insert(self, group: PermissionGroup) -> PermissionGroup:
         raise NotImplementedError()
