@@ -1,5 +1,8 @@
 FROM python:3.10.2-slim
 
+# Build arguments
+ARG UID
+
 # Install base dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     default-jre \
@@ -22,7 +25,7 @@ RUN mkdir -p /vol/web/static  \
     && chmod -R 755 /vol 
 
 # Create python user 
-RUN useradd -ms /bin/bash -u 1002 python
+RUN useradd -ms /bin/bash -u ${UID} python
 WORKDIR /home/python/app
 USER python
 RUN pip install -U pdm

@@ -4,6 +4,8 @@ services:
   django-auth-template:
     build:
       context: .
+      args:
+        UID: $UID
       # Enable this if your image is deployed to a cotainer registry
       # cache_from: 
       #   - path-to-image-in-container-registry:latest
@@ -33,4 +35,5 @@ services:
 volumes:
   db_data:
   static-data:
+
 

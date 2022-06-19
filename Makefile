@@ -1,3 +1,5 @@
+export UID:=$(shell id -u)
+
 # build containers
 build:
 	docker-compose -f docker-compose.yml build
