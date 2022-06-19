@@ -1,5 +1,5 @@
 # Utils
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Dict
 
 # Entities
@@ -13,6 +13,8 @@ from core.infrastructure.db.in_memory.repositories.base_repository import InMemo
 
 @dataclass(slots=True)
 class InMemoryUserRepository(UserRepository, InMemoryBaseEntityRepository):
+    db: List[User] = field(default_factory=list)
+
     def insert(self, user: User) -> User:
         self.db.append(user)
         return user

@@ -31,37 +31,41 @@ class TestUserRepository(unittest.TestCase):
             "permissions": [self.permission],
             "permissions_groups": [self.group],
         }
-        self.user = User(**self.user_props)
 
     def test_insert_user(self):
-        self.user_repo.insert(user=self.user)
-        self.assertEqual(self.user_repo.db[0], self.user)
+        user = User(**self.user_props)
+        self.user_repo.insert(user=user)
+        self.assertEqual(self.user_repo.db[0], user)
 
     def test_find_by_id(self):
-        self.user_repo.insert(user=self.user)
+        user = User(**self.user_props)
+        self.user_repo.insert(user=user)
         user = self.user_repo.find_by_id(
-            user_id=self.user.id)
-        self.assertEqual(user, self.user)
+            user_id=user.id)
+        self.assertEqual(user, user)
 
     def test_find_all(self):
-        self.user_repo.insert(user=self.user)
-        self.assertEqual(self.user_repo.db, [self.user])
+        user = User(**self.user_props)
+        self.user_repo.insert(user=user)
+        self.assertEqual(self.user_repo.db, [user])
 
     def test_update_user(self):
-        user_props = {**self.user_props, "name": "Test 1"}
-        expected_data = {**self.user.to_dict(), "name": "Test 1"}
+        user = User(**self.user_props)
+        user_props = {**self.user_props, "email": "teste2@teste.com.br"}
+        expected_data = {**user.to_dict(), "email": "teste2@teste.com.br"}
 
         new_user = User(**user_props)
-        self.user_repo.insert(user=self.user)
+        self.user_repo.insert(user=user)
         self.user_repo.update(
-            user_id=self.user.id, user=new_user)
+            user_id=user.id, user=new_user)
         user = self.user_repo.find_by_id(
-            user_id=self.user.id)
+            user_id=user.id)
 
         self.assertEqual(
             user.to_dict(), expected_data)
 
     def test_delete_user(self):
-        self.user_repo.insert(user=self.user)
-        self.user_repo.delete(user_id=self.user.id)
+        user = User(**self.user_props)
+        self.user_repo.insert(user=user)
+        self.user_repo.delete(user_id=user.id)
         self.assertEqual(self.user_repo.db, [])

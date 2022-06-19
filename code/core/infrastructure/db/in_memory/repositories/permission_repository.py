@@ -1,5 +1,5 @@
 # Utils
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Dict
 
 # Entities
@@ -13,6 +13,8 @@ from core.infrastructure.db.in_memory.repositories.base_repository import InMemo
 
 @dataclass(slots=True)
 class InMemoryPermissionRepository(PermissionRepository, InMemoryBaseEntityRepository):
+    db: List[Permission] = field(default_factory=list)
+
     def insert(self, permission: Permission) -> Permission:
         self.db.append(permission)
         return permission

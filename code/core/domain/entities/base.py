@@ -24,9 +24,7 @@ class BaseEntityId(ABC):
 
 @dataclass(frozen=True, slots=True)
 class Entity(BaseEntityId, ABC):
-    created_at: Optional[datetime] = field(
-        default_factory=datetime.now
-    )
+    created_at: Optional[datetime] = None
 
     def __post_init__(self):
         if not self.created_at:

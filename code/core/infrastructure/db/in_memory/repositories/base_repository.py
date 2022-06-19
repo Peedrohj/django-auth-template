@@ -10,11 +10,10 @@ from core.domain.value_objects import UniqueEntityId
 from core.domain.exceptions import NotFoundException
 
 BaseEntity = TypeVar('BaseEntity', bound=BaseEntityId)
-Entity = TypeVar('Entity', bound=DomainEntity)
 
 
 class InMemoryBaseEntityRepository(ABC):
-    db: List[BaseEntity] = []
+    db: List[BaseEntity]
 
     def _get(self, entity_id: str | UniqueEntityId) -> BaseEntity:
         entity = next(filter(lambda i: i.id == entity_id, self.db), None)
