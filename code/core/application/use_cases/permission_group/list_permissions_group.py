@@ -11,7 +11,7 @@ from core.domain.repositories import PermissionGroupRepository
 
 
 @dataclass(slots=True)
-class ListAllPermissionsGroup:
+class ListPermissionsGroup:
     permission_group_repository: PermissionGroupRepository
 
     def execute(self, group_id: str | UniqueEntityId = None, filters: Dict = None) -> List[PermissionGroup]:

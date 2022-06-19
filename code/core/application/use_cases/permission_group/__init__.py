@@ -1,4 +1,4 @@
-from .list_all_permissions_group import ListAllPermissionsGroup
+from .list_permissions_group import ListPermissionsGroup
 from .create_permission_group import CreatePermissionGroup
 from .update_permission_group import UpdatePermissionGroup
 from .delete_permission_group import DeletePermissionGroup
