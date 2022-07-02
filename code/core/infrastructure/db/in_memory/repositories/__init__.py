@@ -2,3 +2,4 @@ from .base_repository import InMemoryBaseEntityRepository
 from .permission_group_repository import InMemoryPermissionGoupRepository
 from .permission_repository import InMemoryPermissionRepository
 from .user_repository import InMemoryUserRepository
+from .content_type_repository import InMemoryContentTypeRepository
