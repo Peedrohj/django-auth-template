@@ -1,4 +1,4 @@
-export UID:=$(shell id -u)
+$(shell echo UID=$(shell id -u) > .env)
 
 # build containers
 build:
